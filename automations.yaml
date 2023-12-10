@@ -1,0 +1,105 @@
+- id: '1699372228174'
+  alias: Back Door Open
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition:
+  - type: is_open
+    condition: device
+    device_id: defc8bdc479af791d62b88749b42f6de
+    entity_id: 1ee609b037d6d6cbcc2bbd9444f232ed
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  action:
+  - service: notify.mobile_app_pixel_6_pro
+    data:
+      message: Back door open more than 15 minutes
+      title: Back Door Open
+  - service: notify.mobile_app_sm_s901w
+    data:
+      title: Back Door Open
+      message: Back door open more than 15 minutes
+  mode: single
+- id: '1699372519187'
+  alias: Front door open
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition:
+  - type: is_open
+    condition: device
+    device_id: 74c5f76993aa193b4cea6fead7c351ba
+    entity_id: 42160fbd90d753fda326764f5a0b08f2
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  action:
+  - service: notify.mobile_app_pixel_6_pro
+    data:
+      title: Front Door Open
+      message: Front door open more than 15 minutes
+  - service: notify.mobile_app_sm_s901w
+    data:
+      message: Front door open more than 15 minutes
+      title: Front Door Open
+  mode: single
+- id: '1701895675725'
+  alias: Air Purifier On
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 6871bf246552be42d5a5833098fdae69
+    entity_id: 8fad510b682695e4bb22c8e68fb69507
+    domain: switch
+  mode: single
+- id: '1701895712090'
+  alias: Air Purifier Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 09:30:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 6871bf246552be42d5a5833098fdae69
+    entity_id: 8fad510b682695e4bb22c8e68fb69507
+    domain: switch
+  mode: single
+- id: '1702243212694'
+  alias: Christmas Lights On
+  description: ''
+  trigger:
+  - platform: time
+    at: '18:00:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: f48673e496398dd462b26e39fbda286e
+    entity_id: 566274cf19bd7eb6b905e04b885d7ebb
+    domain: switch
+  mode: single
+- id: '1702243244493'
+  alias: Christmas Lights Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:30:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: f48673e496398dd462b26e39fbda286e
+    entity_id: 566274cf19bd7eb6b905e04b885d7ebb
+    domain: switch
+  mode: single
+
